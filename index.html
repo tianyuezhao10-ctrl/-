@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080808" />
+    <meta name="description" content="An interactive spatial archive of human exploration." />
+    <title>Atlas of Departure</title>
+  </head>
+  <body>
+    <div class="entry-flow" data-entry-state="loading" aria-live="polite">
+      <section class="entry-loading" aria-label="Loading archive">
+        <div class="entry-count" aria-live="polite"><span id="entry-number">0</span><span id="entry-infinity" aria-hidden="true">∞</span></div>
+        <div class="entry-count-label">days until be a conqueror</div>
+        <div class="entry-loading-line"><span></span></div>
+      </section>
+      <section class="entry-cover" aria-label="Enter Atlas of Departure" aria-hidden="true" inert>
+        <div class="entry-cover-orbit" aria-hidden="true"></div>
+        <div class="entry-cover-copy">
+          <span class="entry-kicker">ATLAS OF DEPARTURE</span>
+          <button class="entry-continue" type="button">ENTER ARCHIVE<span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+    </div>
+    <main id="app">
+      <canvas id="space" aria-label="Interactive spatial map of Earth, Moon, Mars, and historic exploration routes"></canvas>
+
+      <header class="masthead">
+        <a class="wordmark" href="#" aria-label="Atlas of Departure, return to Earth view">
+          <span>ATLAS OF</span>
+          <span>DEPARTURE</span>
+        </a>
+        <p class="edition">A SPATIAL ARCHIVE<br />1492—FUTURE</p>
+      </header>
+
+      <aside class="timeline" aria-label="Spatial archive events">
+        <div class="timeline-heading"><span>ARCHIVE</span><span>POSITION / TIME</span></div>
+        <div id="event-list"></div>
+      </aside>
+
+      <section id="markers" aria-label="Historic events"></section>
+
+      <div class="instruction" aria-hidden="true">
+        <span>DRAG TO ORBIT</span>
+        <i></i>
+        <span>SCROLL TO TRAVEL</span>
+      </div>
+      <aside class="field-notes" aria-label="Field notes">
+        <div class="field-heading"><span>FIELD NOTES</span><span>SPATIAL RECORD</span></div>
+        <div class="field-context">CURRENT POSITION</div><div class="field-value" id="field-position">EARTH</div>
+        <div class="field-grid"><div><span class="field-label">ORIGIN</span><strong id="field-origin">EUROPE</strong></div><div><span class="field-label">DESTINATION</span><strong id="field-destination">AMERICA</strong></div><div><span class="field-label">MOVEMENT</span><strong id="field-movement">CROSSING</strong></div><div><span class="field-label">SCALE</span><strong id="field-scale">OCEAN</strong></div></div>
+        <div class="field-context">TRACE</div><div class="field-trace" id="field-trace" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="field-unknown"><span class="field-context">UNKNOWN</span><strong>UNMAPPED TERRITORY</strong></div>
+      </aside>
+
+      <aside class="event-panel" aria-hidden="true" aria-labelledby="panel-title">
+        <button class="close-panel" type="button" aria-label="Close event panel">
+          <span></span><span></span>
+        </button>
+        <div class="panel-index">ARCHIVE / <span id="panel-number">01</span></div>
+        <h1 id="panel-title">COLUMBUS</h1>
+        <p id="panel-date" class="panel-date">1492</p>
+        <div class="media-placeholder" role="img" aria-label="White image placeholder"></div>
+        <div class="panel-meta">
+          <span>IMAGE / ARCHIVE</span>
+          <span>ARTICLE / DOCUMENT</span>
+        </div>
+        <div class="article-placeholder" aria-label="Article placeholder">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </aside>
+
+      <footer class="footer-line">
+        <span>EARTH</span>
+        <span>MOON</span>
+        <span>MARS</span>
+      </footer>
+
+      <button class="fullscreen-hint" type="button" aria-label="Toggle fullscreen">F / FULLSCREEN</button>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
