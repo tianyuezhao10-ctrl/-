@@ -49,7 +49,15 @@
         <div class="field-heading"><span>FIELD NOTES</span><span>SPATIAL RECORD</span></div>
         <div class="field-context">CURRENT POSITION</div><div class="field-value" id="field-position">EARTH</div>
         <div class="field-grid"><div><span class="field-label">ORIGIN</span><strong id="field-origin">EUROPE</strong></div><div><span class="field-label">DESTINATION</span><strong id="field-destination">AMERICA</strong></div><div><span class="field-label">MOVEMENT</span><strong id="field-movement">CROSSING</strong></div><div><span class="field-label">SCALE</span><strong id="field-scale">OCEAN</strong></div></div>
-        <div class="field-context">TRACE</div><div class="field-trace" id="field-trace" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="field-context">TRACE</div>
+        <div class="field-trace" id="field-trace" data-kind="idle" aria-label="Earth to Moon to Mars trace">
+          <span class="trace-node trace-earth"><i></i><b>EARTH</b></span>
+          <span class="trace-node trace-moon"><i></i><b>MOON</b></span>
+          <span class="trace-node trace-mars"><i></i><b>MARS</b></span>
+          <i class="trace-path trace-path-earth"></i>
+          <i class="trace-path trace-path-moon"></i>
+          <i class="trace-path trace-path-mars"></i>
+        </div>
         <div class="field-unknown"><span class="field-context">UNKNOWN</span><strong>UNMAPPED TERRITORY</strong></div>
       </aside>
 

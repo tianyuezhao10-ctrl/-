@@ -386,7 +386,13 @@ const planetMeshes = { earth, moon, mars };
 const materialTransitions = new Map();
 let selectedEvent = null;
 const fieldNotes = { columbus: ['EARTH','EUROPE','AMERICA','CROSSING','OCEAN'], westward: ['EARTH','EAST','WEST','EXPANSION','LAND'], 'space-race': ['MOON','EARTH','ORBIT','ESCAPE','ORBIT'], starship: ['MARS','EARTH','MARS','MIGRATION','PLANET'] };
-function updateFieldNotes(event) { const d = fieldNotes[event?.id || 'columbus']; ['field-position','field-origin','field-destination','field-movement','field-scale'].forEach((id, i) => { const el = document.querySelector(`#${id}`); if (el) el.textContent = d[i]; }); document.querySelector('#field-trace')?.setAttribute('data-kind', event?.id || 'columbus'); }
+function updateFieldNotes(event) {
+  const d = fieldNotes[event?.id || 'columbus'];
+  ['field-position','field-origin','field-destination','field-movement','field-scale'].forEach((id, i) => {
+    const el = document.querySelector(`#${id}`); if (el) el.textContent = d[i];
+  });
+  document.querySelector('#field-trace')?.setAttribute('data-kind', event?.id || 'idle');
+}
 
 function setEventMaterial(event) {
   Object.entries(planetMeshes).forEach(([name, mesh]) => {
@@ -416,6 +422,7 @@ function clearEventSelection() {
     item.listElement?.classList.remove('is-active');
   });
   setEventMaterial(null);
+  updateFieldNotes(null);
 }
 
 function createSymbol(event) {
